@@ -5,6 +5,8 @@ import io.localhost.wordrelations.model.WordRelationRequest;
 import io.localhost.wordrelations.repository.WordRelationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class WordRelationService {
 
@@ -13,6 +15,10 @@ public class WordRelationService {
 
     public WordRelationService(WordRelationRepository wordRelationRepository) {
         this.wordRelationRepository = wordRelationRepository;
+    }
+
+    public List<WordRelation> getAllWordRelations() {
+        return wordRelationRepository.findAll();
     }
 
     public Long createWordRelation(WordRelationRequest newWordRelationRequest) {
