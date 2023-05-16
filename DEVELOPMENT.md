@@ -15,3 +15,8 @@ curl --location 'http://localhost:8080/api/v1/word-relations' \
 
 curl --location --request GET 'http://localhost:8080/api/v1/word-relations'
 
+3) get all words with relation filter
+
+curl --location --request GET 'http://localhost:8080/api/v1/word-relations?relation=spam' \
+
+4)
