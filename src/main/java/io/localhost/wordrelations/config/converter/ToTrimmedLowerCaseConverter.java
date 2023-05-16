@@ -1,4 +1,4 @@
-package io.localhost.wordrelations.converter;
+package io.localhost.wordrelations.config.converter;
 
 import com.fasterxml.jackson.databind.util.StdConverter;
 
