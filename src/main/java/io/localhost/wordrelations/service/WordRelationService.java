@@ -5,6 +5,7 @@ import io.localhost.wordrelations.model.WordRelation;
 import io.localhost.wordrelations.model.WordRelationRequest;
 import io.localhost.wordrelations.repository.WordRelationRepository;
 import org.apache.logging.log4j.util.Strings;
+import org.hibernate.cfg.NotYetImplementedException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -74,5 +75,13 @@ public class WordRelationService {
         inverseRelation.setRelation(wordRelation.getRelation());
 
         return inverseRelation;
+    }
+
+    public Boolean existsPathBetween(String firstWord, String secondWord) {
+        List<WordRelation> all = wordRelationRepository.findAll();
+        // construct map
+        // track paths checked
+        // iterate until no more nodes or path found
+        throw new NotYetImplementedException();
     }
 }

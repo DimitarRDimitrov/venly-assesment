@@ -4,6 +4,7 @@ import io.localhost.wordrelations.model.WordRelation;
 import io.localhost.wordrelations.model.WordRelationRequest;
 import io.localhost.wordrelations.service.WordRelationService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,5 +31,11 @@ public class WordRelationsController {
                                                   @RequestParam(required = false, name = "includeInversion")
                                                   Boolean includeInversion) {
         return wordRelationService.getAllWordRelations(relationFilter, includeInversion);
+    }
+
+    @GetMapping("/path")
+    public Boolean existsPath(@RequestParam @NotBlank String firstWord,
+                              @RequestParam @NotBlank String secondWord) {
+        return wordRelationService.existsPathBetween(firstWord, secondWord);
     }
 }
