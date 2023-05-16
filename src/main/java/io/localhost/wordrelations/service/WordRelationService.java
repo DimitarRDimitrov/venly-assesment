@@ -27,11 +27,16 @@ public class WordRelationService {
     }
 
     public Long createWordRelation(WordRelationRequest newWordRelationRequest) {
+        WordRelation newWordRelation = buildWorldRelationFromRequest(newWordRelationRequest);
+
+        return wordRelationRepository.save(newWordRelation).getId();
+    }
+
+    private WordRelation buildWorldRelationFromRequest(WordRelationRequest newWordRelationRequest) {
         WordRelation newWordRelation = new WordRelation();
         newWordRelation.setFirstWord(newWordRelationRequest.getFirstWord());
         newWordRelation.setSecondWord(newWordRelationRequest.getSecondWord());
         newWordRelation.setRelation(newWordRelationRequest.getRelation());
-
-        return wordRelationRepository.save(newWordRelation).getId();
+        return newWordRelation;
     }
 }
