@@ -25,7 +25,8 @@ public class WordRelationsController {
     }
 
     @GetMapping
-    public List<WordRelation> getAllWordRelations() {
-        return wordRelationService.getAllWordRelations();
+    public List<WordRelation> getAllWordRelations(@RequestParam(required = false, name = "relation")
+                                                  String relationFilter) {
+        return wordRelationService.getAllWordRelations(relationFilter);
     }
 }

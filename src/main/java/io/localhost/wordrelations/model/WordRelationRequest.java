@@ -1,7 +1,6 @@
 package io.localhost.wordrelations.model;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 
 public class WordRelationRequest {
 

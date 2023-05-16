@@ -3,6 +3,7 @@ package io.localhost.wordrelations.service;
 import io.localhost.wordrelations.model.WordRelation;
 import io.localhost.wordrelations.model.WordRelationRequest;
 import io.localhost.wordrelations.repository.WordRelationRepository;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +18,12 @@ public class WordRelationService {
         this.wordRelationRepository = wordRelationRepository;
     }
 
-    public List<WordRelation> getAllWordRelations() {
-        return wordRelationRepository.findAll();
+    public List<WordRelation> getAllWordRelations(String relationFilter) {
+        if (Strings.isBlank(relationFilter)) {
+            return wordRelationRepository.findAll();
+        }
+
+        return wordRelationRepository.findByRelation(relationFilter);
     }
 
     public Long createWordRelation(WordRelationRequest newWordRelationRequest) {
