@@ -1,10 +1,10 @@
-package io.localhost.venlyassesment;
+package io.localhost.wordrelations;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VenlyAssesmentApplicationTests {
+class WorldRelationsApplicationTests {
 
 	@Test
 	void contextLoads() {

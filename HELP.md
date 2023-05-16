@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'io.localhost.venly-assesment' is invalid and this project uses 'io.localhost.venlyassesment' instead.
+* The original package name 'io.localhost.venly-assesment' is invalid and this project uses 'io.localhost.wordrelations' instead.
 
 # Getting Started
 
