@@ -26,7 +26,9 @@ public class WordRelationsController {
 
     @GetMapping
     public List<WordRelation> getAllWordRelations(@RequestParam(required = false, name = "relation")
-                                                  String relationFilter) {
-        return wordRelationService.getAllWordRelations(relationFilter);
+                                                  String relationFilter,
+                                                  @RequestParam(required = false, name = "includeInversion")
+                                                  Boolean includeInversion) {
+        return wordRelationService.getAllWordRelations(relationFilter, includeInversion);
     }
 }

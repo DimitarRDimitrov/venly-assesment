@@ -1,5 +1,6 @@
 package io.localhost.wordrelations.config;
 
+import io.localhost.wordrelations.exception.InverseRelationExistsException;
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,5 +21,10 @@ public class DataIntegrityExceptionHandler {
         } else {
             return new ResponseEntity<>(Map.of("errors", "could not create word relation"), HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @ExceptionHandler(value = InverseRelationExistsException.class)
+    public ResponseEntity<Object> exception(InverseRelationExistsException exception) {
+        return new ResponseEntity<>(Map.of("errors", "inverse word relation already exists"), HttpStatus.BAD_REQUEST);
     }
 }
